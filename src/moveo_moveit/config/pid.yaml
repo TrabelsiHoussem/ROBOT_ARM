@@ -1,0 +1,12 @@
+/gazebo_ros_control/pid_gains:
+  Joint_1: {p: 1.0, i: 0.0, d: 1.0}
+  Joint_2: {p: 1.0, i: 0.0, d: 1.0}
+  Joint_3: {p: 1.0, i: 0.0, d: 1.0}
+  Joint_4: {p: 1.0, i: 0.0, d: 1.0}
+  Joint_5: {p: 1.0, i: 0.0, d: 1.0}
+  Gripper_Servo_Gear_Joint: {p: 1.0, i: 0.0, d: 1.0}
+  Tip_Gripper_Servo_Joint: {p: 1.0, i: 0.0, d: 1.0}
+  Gripper_Idol_Gear_Joint: {p: 1.0, i: 0.0, d: 1.0}
+  Tip_Gripper_Idol_Joint: {p: 1.0, i: 0.0, d: 1.0}
+  Pivot_Arm_Gripper_Servo_Joint: {p: 1.0, i: 0.0, d: 1.0}
+  Pivot_Arm_Gripper_Idol_Joint: {p: 1.0, i: 0.0, d: 1.0}

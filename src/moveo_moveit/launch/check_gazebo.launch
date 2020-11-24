@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="model" />
+  <arg name="gui" default="true" />
+  <arg name="x" default="0"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="0"/>
+
+  <arg name="paused" default="true"/>
+  <arg name="use_sim_time" default="false"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  <!--<rosparam file="$(find moveo_moveit)/config/pid.yaml" command="load"/>-->
+  <!--<rosparam command="load" file="$(find moveo_moveit)/config/controllers.yaml" />-->
+  <param name="use_gui" value="$(arg gui)"/>
+  <param name="robot_description" textfile="$(find moveo_urdf)/urdf/moveo_gazebo_urdf.urdf"	/>
+  
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" >
+  </node>
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> 
+
+
+ <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>
+
+    <!--<node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model moveo -x $(arg x) -y $(arg y) -z $(arg z)" />-->
+   
+  <node name="rviz" pkg="rviz" type="rviz"/> 
+</launch>

@@ -1,0 +1,41 @@
+
+  # Publish all joint states -----------------------------------
+  joints_update:
+    type: joint_state_controller/JointStateController
+    publish_rate: 300
+  
+  # Position Controllers ---------------------------------------
+  Joint_1:
+    type: position_controllers/JointPositionController
+    joint: Joint_1
+  Joint_2:
+    type: position_controllers/JointPositionController
+    joint: Joint_2
+  Joint_3:
+    type: position_controllers/JointPositionController
+    joint: Joint_3
+  Joint_4:
+    type: position_controllers/JointPositionController
+    joint: Joint_4
+  Joint_5:
+    type: position_controllers/JointPositionController
+    joint: Joint_5
+  Gripper_Servo_Gear_Joint: 
+    type: position_controllers/JointPositionController
+    joint: Gripper_Servo_Gear_Joint
+
+  Tip_Gripper_Servo_Joint: 
+    type: position_controllers/JointPositionController
+    joint: Tip_Gripper_Servo_Joint
+  Gripper_Idol_Gear_Joint:
+    type: position_controllers/JointPositionController
+    joint: Gripper_Idol_Gear_Joint
+  Tip_Gripper_Idol_Joint:
+    type: position_controllers/JointPositionController 
+    joint: Tip_Gripper_Idol_Joint
+  Pivot_Arm_Gripper_Servo_Joint: 
+    type: position_controllers/JointPositionController
+    joint: Pivot_Arm_Gripper_Servo_Joint
+  Pivot_Arm_Gripper_Idol_Joint: 
+    type: position_controllers/JointPositionController
+    joint: Pivot_Arm_Gripper_Idol_Joint

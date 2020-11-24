@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<launch>
+    
+  <rosparam file="$(find moveo_moveit)/config/controllers.yaml" command="load"/>
+   
+  
+  <arg name="gui" default="true" />
+  
+  <param	name="robot_description"	textfile="$(find moveo_moveit)/urdf/moveo_gazebo_urdf.urdf"	/>
+  <!--<param	name="robot_description"	textfile="$(find moveo_moveit)/urdf/moveo_urdf.urdf"	/>-->
+  <param name="use_gui" value="$(arg gui)"/>
+
+  <node name="robot_hardware_interface" pkg="moveo_moveit" type="robot_hardware_interface" output="screen"/>
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+        args="
+        	  /joints_update
+            /Joint_1
+            /Joint_2
+            /Joint_3
+            /Joint_4
+            /Joint_5
+         
+        "/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false"  output="screen" >
+  </node>
+  
+  <node name="rviz" pkg="rviz" type="rviz"/>
+    
+  
+</launch>
+
